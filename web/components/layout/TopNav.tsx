@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { Menu, Sun, Moon, Bell, Search } from 'lucide-react';
@@ -7,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import type { User } from '@/lib/auth/auth';
 import { useAuth } from '@/lib/auth/AuthContext';
-import { locales, localeMetadata } from '@/lib/config';
+import { locales, localeMetadata, defaultLocale } from '@/lib/config';
 
 interface TopNavProps {
   onMenuButtonClick: () => void;
@@ -23,17 +24,26 @@ export function TopNav({
   theme,
 }: TopNavProps) {
   const t = useTranslations();
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '/';
   const { logout } = useAuth();
 
   // Get current locale and its metadata
-  const currentLocale = pathname.split('/')[1];
-  const currentLocaleMetadata = localeMetadata[currentLocale as keyof typeof localeMetadata];
+  const currentLocale =
+    locales.find(
+      (locale) =>
+        pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+    ) ?? defaultLocale;
+  const currentLocaleMetadata = localeMetadata[currentLocale];
 
   // Get next locale (cycling through available locales)
   const currentIndex = locales.indexOf(currentLocale);
   const nextLocale = locales[(currentIndex + 1) % locales.length];
-  const nextLocalePath = pathname.replace(`/${currentLocale}`, `/${nextLocale}`);
+  const localePrefix = `/${currentLocale}`;
+  const hasLocalePrefix =
+    pathname === localePrefix || pathname.startsWith(`${localePrefix}/`);
+  const nextLocalePath = hasLocalePrefix
+    ? pathname.replace(localePrefix, `/${nextLocale}`)
+    : `/${nextLocale}${pathname === '/' ? '' : pathname}`;
 
   return (
     <header className="border-b">
@@ -82,9 +92,9 @@ export function TopNav({
             className="hidden md:inline-flex"
             asChild
           >
-            <a href={nextLocalePath} hrefLang={nextLocale}>
-              {localeMetadata[nextLocale as keyof typeof localeMetadata].name}
-            </a>
+            <Link href={nextLocalePath} hrefLang={nextLocale} prefetch={false}>
+              {localeMetadata[nextLocale].name}
+            </Link>
           </Button>
 
           {/* Notifications */}

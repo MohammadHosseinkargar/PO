@@ -1,5 +1,3 @@
-import { jwtDecode } from 'jwt-decode';
-
 export interface User {
   id: string;
   email: string;
@@ -13,6 +11,31 @@ interface JWTPayload {
   name: string;
   role: string;
   exp: number;
+}
+
+function decodeJwt<T>(token: string): T {
+  const [, payload] = token.split('.');
+  if (!payload) {
+    throw new Error('Invalid token');
+  }
+
+  const base64 = payload.replace(/-/g, '+').replace(/_/g, '/');
+  const padded = base64.padEnd(Math.ceil(base64.length / 4) * 4, '=');
+
+  const json = typeof atob === 'function'
+    ? decodeURIComponent(
+        atob(padded)
+          .split('')
+          .map((char) => `%${char.charCodeAt(0).toString(16).padStart(2, '0')}`)
+          .join('')
+      )
+    : typeof Buffer !== 'undefined'
+      ? Buffer.from(padded, 'base64').toString('utf-8')
+      : (() => {
+          throw new Error('No base64 decoder available');
+        })();
+
+  return JSON.parse(json) as T;
 }
 
 export async function login(email: string, password: string) {
@@ -55,7 +78,7 @@ export async function logout() {
 
 export function getUserFromToken(token: string): User | null {
   try {
-    const decoded = jwtDecode<JWTPayload>(token);
+    const decoded = decodeJwt<JWTPayload>(token);
     if (Date.now() >= decoded.exp * 1000) {
       return null;
     }
