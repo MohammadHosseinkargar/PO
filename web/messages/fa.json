@@ -18,7 +18,9 @@
     "logout": "خروج",
     "email": "ایمیل",
     "password": "رمز عبور",
-    "forgotPassword": "رمز عبور را فراموش کرده‌اید؟"
+    "forgotPassword": "رمز عبور را فراموش کرده‌اید؟",
+    "loginDescription": "با ورود به حساب کاربری به داشبورد دسترسی پیدا کنید",
+    "loginFailed": "ورود ناموفق بود. لطفاً دوباره تلاش کنید."
   },
   "dashboard": {
     "totalStock": "موجودی کل",
@@ -26,7 +28,14 @@
     "stockValue": "ارزش موجودی",
     "lowStockAlerts": "هشدار موجودی کم",
     "topSelling": "پرفروش‌ترین‌ها",
-    "recentSales": "فروش‌های اخیر"
+    "recentSales": "فروش‌های اخیر",
+    "totalStockDesc": "تعداد کل اقلام موجود در انبار",
+    "activeSKUsDesc": "تعداد شناسه‌های فعال محصول",
+    "stockValueDesc": "ارزش کل موجودی فعلی",
+    "lowStockAlertsDesc": "هشدار برای سطح موجودی پایین",
+    "sales": "فروش",
+    "topProducts": "محصولات برتر",
+    "unitsSold": "تعداد فروش رفته"
   },
   "products": {
     "title": "محصولات",

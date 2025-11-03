@@ -1,5 +1,7 @@
+"use client";
+
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { User, getUserFromToken, refreshToken } from './auth';
+import { User, getUserFromToken, refreshToken, login, logout, register } from './auth';
 
 interface AuthContextType {
   user: User | null;

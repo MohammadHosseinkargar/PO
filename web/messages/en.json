@@ -18,7 +18,9 @@
     "logout": "Logout",
     "email": "Email",
     "password": "Password",
-    "forgotPassword": "Forgot Password?"
+    "forgotPassword": "Forgot Password?",
+    "loginDescription": "Access your dashboard by signing in",
+    "loginFailed": "Login failed. Please try again."
   },
   "dashboard": {
     "totalStock": "Total Stock",
@@ -26,7 +28,14 @@
     "stockValue": "Stock Value",
     "lowStockAlerts": "Low Stock Alerts",
     "topSelling": "Top Selling Items",
-    "recentSales": "Recent Sales"
+    "recentSales": "Recent Sales",
+    "totalStockDesc": "Total items currently in stock",
+    "activeSKUsDesc": "Number of active product SKUs",
+    "stockValueDesc": "Total value of stock on hand",
+    "lowStockAlertsDesc": "Alerts for low inventory levels",
+    "sales": "Sales",
+    "topProducts": "Top Products",
+    "unitsSold": "Units Sold"
   },
   "products": {
     "title": "Products",
