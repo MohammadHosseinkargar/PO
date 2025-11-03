@@ -1,0 +1,55 @@
+{
+  "app": {
+    "title": "سیستم مدیریت انبار پوشاک",
+    "description": "مدیریت کارآمد انبار پوشاک"
+  },
+  "nav": {
+    "dashboard": "داشبورد",
+    "products": "محصولات",
+    "inventory": "انبار",
+    "suppliers": "تامین‌کنندگان",
+    "sales": "فروش",
+    "reports": "گزارشات",
+    "settings": "تنظیمات"
+  },
+  "auth": {
+    "login": "ورود",
+    "register": "ثبت‌نام",
+    "logout": "خروج",
+    "email": "ایمیل",
+    "password": "رمز عبور",
+    "forgotPassword": "رمز عبور را فراموش کرده‌اید؟"
+  },
+  "dashboard": {
+    "totalStock": "موجودی کل",
+    "activeSKUs": "محصولات فعال",
+    "stockValue": "ارزش موجودی",
+    "lowStockAlerts": "هشدار موجودی کم",
+    "topSelling": "پرفروش‌ترین‌ها",
+    "recentSales": "فروش‌های اخیر"
+  },
+  "products": {
+    "title": "محصولات",
+    "add": "افزودن محصول",
+    "edit": "ویرایش محصول",
+    "delete": "حذف محصول",
+    "name": "نام",
+    "sku": "کد محصول",
+    "category": "دسته‌بندی",
+    "price": "قیمت",
+    "stock": "موجودی",
+    "actions": "عملیات"
+  },
+  "common": {
+    "save": "ذخیره",
+    "cancel": "انصراف",
+    "delete": "حذف",
+    "edit": "ویرایش",
+    "view": "مشاهده",
+    "loading": "در حال بارگذاری...",
+    "error": "خطا",
+    "success": "موفق",
+    "confirm": "تایید",
+    "search": "جستجو"
+  }
+}

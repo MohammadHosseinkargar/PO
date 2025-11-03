@@ -1,0 +1,55 @@
+{
+  "app": {
+    "title": "Clothing Inventory System",
+    "description": "Manage your clothing inventory efficiently"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "inventory": "Inventory",
+    "suppliers": "Suppliers",
+    "sales": "Sales",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?"
+  },
+  "dashboard": {
+    "totalStock": "Total Stock",
+    "activeSKUs": "Active SKUs",
+    "stockValue": "Stock Value",
+    "lowStockAlerts": "Low Stock Alerts",
+    "topSelling": "Top Selling Items",
+    "recentSales": "Recent Sales"
+  },
+  "products": {
+    "title": "Products",
+    "add": "Add Product",
+    "edit": "Edit Product",
+    "delete": "Delete Product",
+    "name": "Name",
+    "sku": "SKU",
+    "category": "Category",
+    "price": "Price",
+    "stock": "Stock",
+    "actions": "Actions"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "search": "Search"
+  }
+}
